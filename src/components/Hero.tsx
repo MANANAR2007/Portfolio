@@ -12,7 +12,7 @@ import {
   IcoGemScene,
 } from '../three/HeroAccents';
 
-const HERO_PHOTO = 'public/images/profile.PNG';
+const HERO_PHOTO = '/images/profile.PNG';
 
 const subtitle =
   "A CS student who enjoys building things around AI, systems, and real-world ideas. Currently exploring software engineering through projects, design, and a lot of curiosity.";
