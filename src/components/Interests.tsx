@@ -5,9 +5,7 @@ import {
   Palette,
   Users,
   Globe,
-  Mic,
-  Sparkles,
-  Check,
+  Mic
 } from 'lucide-react';
 
 import SectionLabel from './SectionLabel';
