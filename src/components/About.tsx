@@ -17,16 +17,16 @@ const interests = [
 
 const filmstrip = [
   {
-    src: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
-    alt: 'Aircraft wing over dramatic sky',
+    src: '/images/1.jpg',
+    alt: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&q=80',
-    alt: 'Moody misty forest',
+    src: '/images/2.jpg',
+    alt: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80',
-    alt: 'Close-up of a camera',
+    src: '/images/3.HEIC',
+    alt: '',
   },
 ];
 
@@ -170,7 +170,7 @@ export default function About() {
         </motion.div>
 
         <p className="mt-3 text-center text-[13px] italic text-gray-500">
-          Things I actually stop to photograph — not just the obvious stuff.
+          A few photos that I've taken
         </p>
 
         {/* Quote */}
@@ -189,8 +189,8 @@ export default function About() {
             "
           </span>
           <blockquote className="italic text-white text-xl leading-snug max-w-lg">
-            A strong believer that God has a way of making things work out when they're
-            meant to.
+            A strong believer of 
+            "God has a way of making things work out when they're meant to."
           </blockquote>
         </motion.figure>
 

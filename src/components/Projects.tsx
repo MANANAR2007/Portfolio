@@ -92,6 +92,36 @@ const PROJECTS: Project[] = [
     ],
   },
   {
+    name: 'EventOS AI',
+    subtitle: 'Hackathon group project',
+    stack: ['React', 'TypeScript', 'Gemini API', 'Firebase'],
+    description:
+      'EventOS AI transforms raw event details into structured operational plans, communication workflows, volunteer coordination, readiness insights, and launch strategies.',
+    features: [
+      'Generate complete event workspaces',
+      'Create operational checklists automatically',
+      'Build communication and reminder plans',
+      'Generate timelines and launch strategies',
+    ],
+    accent: '#06b6d4',
+    accentSoft: 'rgba(6,182,212,0.16)',
+    accentGlow: 'rgba(6,182,212,0.38)',
+    githubUrl: '/',
+    demoUrl: 'https://forge-force-ten.vercel.app/',
+    previewTitle: 'Operations command center',
+    previewSubtitle: 'From event idea to execution plan in minutes.',
+    metrics: [
+      { label: 'Modules', value: '6' },
+      { label: 'Output', value: 'Instant' },
+      { label: 'Focus', value: 'Operations' },
+    ],
+    previewCards: [
+      { label: 'Tasks generated', value: '84' },
+      { label: 'Readiness score', value: '91%' },
+      { label: 'Comms assets', value: '12' },
+    ],
+  },
+  {
     name: 'TrackerX',
     subtitle: 'Application pipeline command center',
     stack: ['React', 'Node.js', 'MySQL'],

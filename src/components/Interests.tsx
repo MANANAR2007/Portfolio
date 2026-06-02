@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import {
   Plane,
   Camera,
-  Bot,
-  Cpu,
+  Palette,
+  Users,
+  Globe,
   Mic,
   Sparkles,
   Check,
@@ -18,49 +19,49 @@ const cinematic = [
   {
     Icon: Plane,
     title: 'Aviation',
-    desc: "I've spent more hours than I'd like to admit watching ATC recordings and reading about how airline operations actually work. There's something about how a system that moves millions of people daily manages to be as precise as it is — I find that genuinely compelling, not just \"interesting.\"",
-    footer: "Could talk about this for hours, honestly",
+    desc: "I've spent more hours than I'd like to admit watching ATC recordings, following airline operations, and reading about aircraft. There's something fascinating about the precision and coordination behind an industry that moves millions of people every day.",
+    footer: "Could probably identify an aircraft before you finish asking",
     accent: '#fb7185',
     glow: 'rgba(251,113,133,0.18)',
   },
   {
     Icon: Camera,
-    title: 'Design & Visuals',
-    desc: "I notice design everywhere — why a button feels off, why a layout works without being told why, why some apps feel effortless and others feel like work. I'm not a designer by training but I've picked up enough to have strong opinions, which is probably both useful and annoying.",
-    footer: "I've redesigned the same UI just for fun, multiple times",
+    title: 'Photography',
+    desc: "Photography makes me pay attention to details I would otherwise miss. Whether it's airports, cityscapes, or random moments, I enjoy finding interesting perspectives and stories through a lens.",
+    footer: "Most trips somehow turn into photo walks",
     accent: '#f59e0b',
     glow: 'rgba(245,158,11,0.18)',
   },
   {
-    Icon: Bot,
-    title: 'AI & Robotics',
-    desc: "Less \"AI is the future\" enthusiasm and more actual curiosity about how these systems work, where they break, and what happens when software needs to interact with the messy physical world. I keep tabs on robotics research even when it has nothing to do with whatever I'm working on.",
-    footer: "Reading papers for fun is a personality flaw, I know",
-    accent: '#34d399',
-    glow: 'rgba(52,211,153,0.18)',
+    Icon: Mic,
+    title: 'Public Speaking',
+    desc: "I've always enjoyed being on stage, presenting ideas, and having conversations that make people think. Public speaking taught me confidence, but more importantly, it taught me how to communicate clearly.",
+    footer: "Still get nervous. Just better at hiding it now",
+    accent: '#22d3ee',
+    glow: 'rgba(34,211,238,0.18)',
   },
 ];
 
 const plain = [
   {
-    Icon: Cpu,
-    title: 'Systems Thinking',
-    desc: "When I use something, I start wondering what's running underneath it. Not always a productive trait, but it's led me down a lot of rabbit holes that were worth it in retrospect — software architecture, telemetry pipelines, operational design.",
-    footer: "The \"but how does it actually work\" person in every room",
+    Icon: Palette,
+    title: 'Graphic Design',
+    desc: "I enjoy creating visuals, experimenting with layouts, and understanding why certain designs feel right. It's probably why I spend way too much time tweaking interfaces.",
+    footer: "The alignment definitely matters",
     accent: '#8b5cf6',
   },
   {
-    Icon: Mic,
-    title: 'Communication',
-    desc: "I care about being understood, not just technically correct. That means spending real time thinking about how to explain things — presentations, writing, even just how I phrase a message. Complex ≠ smart; clear is usually harder.",
-    footer: "I rewrite things more than most people probably should",
-    accent: '#22d3ee',
+    Icon: Users,
+    title: 'Leadership & Events',
+    desc: "From school events to international summits, I've always enjoyed bringing people together, organizing things, and making sure ideas actually turn into reality.",
+    footer: "Planning is fun until the event starts",
+    accent: '#34d399',
   },
   {
-    Icon: Sparkles,
-    title: 'Building Things',
-    desc: "My default mode when I have free time is to start building something — a tool, an interface, an experiment that might go nowhere. A lot of it never ships. That's fine; the building is the part I actually enjoy.",
-    footer: "My graveyard of half-built projects is vast and proud",
+    Icon: Globe,
+    title: 'Exploring New Things',
+    desc: "Whether it's a new technology, a random topic, or a completely different field, I enjoy diving into unfamiliar territory. Curiosity is probably the one interest that connects everything else.",
+    footer: "The rabbit holes never really end",
     accent: '#facc15',
   },
 ];
@@ -115,8 +116,7 @@ function CinematicCard({
         </div>
 
         <div className="mt-auto pt-8 flex items-center gap-2 text-sm text-gray-500">
-          <Sparkles size={14} />
-          <span>Something I genuinely enjoy exploring</span>
+
         </div>
       </div>
     </motion.div>
@@ -164,8 +164,7 @@ function MinimalCard({
         </p>
 
         <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
-          <Check size={14} color={item.accent} />
-          <span>Part of how I think and work</span>
+          
         </div>
       </div>
     </motion.div>
