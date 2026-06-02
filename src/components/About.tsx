@@ -90,21 +90,21 @@ export default function About() {
     <motion.section
       ref={sectionRef}
       id="about"
-      className="relative px-6 py-[100px]"
+      className="section-shell relative overflow-hidden"
       style={{ backgroundColor: bg }}
     >
       {/* Particles background */}
       <motion.div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0 z-0 hidden sm:block"
         style={{ opacity: 0.4, y: particleY }}
       >
         <ParticlesScene className="w-full h-full" />
       </motion.div>
 
-      <div className="max-w-3xl mx-auto relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-3xl">
         <SectionLabel>About</SectionLabel>
 
-        <RevealHeading className="text-3xl sm:text-[38px] font-bold text-white leading-tight">
+        <RevealHeading className="section-heading">
           A curious builder, still figuring things out.
         </RevealHeading>
 
@@ -119,7 +119,7 @@ export default function About() {
               transition: { staggerChildren: 0.12, delayChildren: 0.08 },
             },
           }}
-          className="mt-8 flex flex-col gap-6"
+          className="mt-7 flex flex-col gap-5 sm:mt-8 sm:gap-6"
         >
           {paragraphs.map((content, i) => (
             <motion.p
@@ -128,7 +128,7 @@ export default function About() {
                 hidden: { opacity: 0, y: 18 },
                 show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="text-gray-400 text-[17px] leading-8"
+              className="text-base leading-8 text-gray-400 sm:text-[17px]"
             >
               {content}
             </motion.p>
@@ -141,12 +141,12 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-10 grid grid-cols-3 gap-3 h-[140px] md:h-[220px]"
+          className="mt-10 grid h-[120px] grid-cols-3 gap-2 sm:h-[160px] sm:gap-3 md:h-[220px]"
         >
           {filmstrip.map((img) => (
             <div
               key={img.src}
-              className="relative overflow-hidden rounded-2xl bg-[#111]"
+              className="relative overflow-hidden rounded-xl bg-[#111] sm:rounded-2xl"
             >
               <img
                 src={img.src}
@@ -179,7 +179,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-10 pl-8 relative"
+          className="relative mt-10 pl-7 sm:pl-8"
         >
           <span
             aria-hidden
@@ -188,7 +188,7 @@ export default function About() {
           >
             "
           </span>
-          <blockquote className="italic text-white text-xl leading-snug max-w-lg">
+          <blockquote className="max-w-lg text-lg italic leading-snug text-white sm:text-xl">
             A strong believer of 
             "God has a way of making things work out when they're meant to."
           </blockquote>
@@ -199,7 +199,7 @@ export default function About() {
           {interests.map(({ label, Icon, color }) => (
             <span
               key={label}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a1a] px-3 py-1 text-[13px] text-white"
+              className="inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[#1a1a1a] px-3 py-1 text-[13px] text-white"
               style={{ border: `1px solid ${color}55` }}
             >
               <Icon size={13} color={color} />
@@ -210,15 +210,15 @@ export default function About() {
       </div>
 
       {/* Ticker */}
-      <div className="mt-16 relative z-10 overflow-hidden w-full">
+      <div className="relative z-10 mt-14 w-full overflow-hidden sm:mt-16">
         <div
-          className="flex gap-8 whitespace-nowrap"
-          style={{ animation: 'tickerScroll 28s linear infinite' }}
+          className="flex gap-6 whitespace-nowrap sm:gap-8"
+          style={{ animation: 'tickerScroll 36s linear infinite' }}
         >
           {tickerItems.map((f, i) => (
             <span
               key={i}
-              className="inline-flex items-center gap-8 text-[13px] uppercase tracking-widest text-gray-400"
+              className="inline-flex items-center gap-6 text-[11px] uppercase tracking-widest text-gray-400 sm:gap-8 sm:text-[13px]"
             >
               {f}
               <span className="text-purple-300 opacity-60">◆</span>

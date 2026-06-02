@@ -38,14 +38,14 @@ const items = [
 
 export default function Leadership() {
   return (
-    <section id="leadership" className="px-6 py-[100px]">
-      <div className="max-w-5xl mx-auto">
+    <section id="leadership" className="section-shell">
+      <div className="content-shell max-w-5xl">
         <SectionLabel>Leadership</SectionLabel>
-        <RevealHeading className="text-3xl sm:text-[38px] font-bold text-white">
+        <RevealHeading className="section-heading">
           Beyond the keyboard
         </RevealHeading>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
@@ -53,21 +53,21 @@ export default function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="card-hover bg-[#111] rounded-2xl p-5"
+              className="card-hover h-full rounded-2xl bg-[#111] p-5"
               style={{
                 border: '1px solid rgba(255,255,255,0.06)',
                 borderTop: `2px solid ${item.accent}55`,
               }}
             >
               <item.Icon size={24} color={item.accent} className="mb-3" />
-              <h3 className="text-white text-base font-bold">{item.title}</h3>
+              <h3 className="text-base font-bold text-white">{item.title}</h3>
               <p
                 className="text-[13px] mt-1 mb-2"
                 style={{ color: item.accent }}
               >
                 {item.org}
               </p>
-              <p className="text-gray-400 text-[13px] leading-relaxed">
+              <p className="text-[13px] leading-relaxed text-gray-400">
                 {item.desc}
               </p>
             </motion.div>

@@ -227,7 +227,7 @@ function ActionButton({
       href={href}
       target={href === '#' ? undefined : '_blank'}
       rel={href === '#' ? undefined : 'noreferrer'}
-      className={`btn-glow inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${primary
+      className={`btn-glow inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${primary
         ? 'bg-white text-[#121317] hover:bg-gray-200'
         : 'border border-white/15 text-white hover:border-white/40 hover:bg-white/5'
         }`}
@@ -253,15 +253,15 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
           background: `radial-gradient(circle at 72% 42%, ${project.accentGlow}, transparent 34%), radial-gradient(circle at 12% 78%, rgba(255,255,255,0.045), transparent 28%)`,
         }}
       />
-      <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-10 py-24">
+      <div className="relative mx-auto h-full max-w-7xl px-6 py-20 lg:px-10 xl:py-24">
         <motion.div
-          className="h-full grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-10 xl:gap-16 items-center"
+          className="grid h-full grid-cols-1 items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] xl:gap-16"
           initial={{ opacity: 0, y: 36, scale: 0.985 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ amount: 0.58 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="max-w-xl">
+          <div className="max-w-xl pr-1">
             <div className="flex items-center gap-3 text-sm text-gray-400">
               <span
                 className="h-px w-10"
@@ -272,15 +272,15 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
               <span>{project.subtitle}</span>
             </div>
 
-            <h2 className="mt-6 text-5xl xl:text-7xl font-bold leading-none tracking-tight text-white">
+            <h2 className="mt-5 text-4xl font-bold leading-none tracking-tight text-white xl:mt-6 xl:text-6xl 2xl:text-7xl">
               {project.name}
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            <p className="mt-5 text-base leading-7 text-gray-300 xl:mt-6 xl:text-lg xl:leading-8">
               {project.description}
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2 xl:mt-7">
               {project.stack.map((item) => (
                 <span
                   key={item}
@@ -295,7 +295,7 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
               ))}
             </div>
 
-            <div className="mt-8 grid gap-3">
+            <div className="mt-6 grid gap-3 xl:mt-8">
               {project.features.map((feature) => (
                 <div key={feature} className="flex items-center gap-3 text-sm text-gray-300">
                   <span
@@ -312,7 +312,7 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
               ))}
             </div>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3 xl:mt-9">
               <ActionButton href={project.githubUrl}>
                 <GithubIcon size={16} /> GitHub
               </ActionButton>
@@ -323,11 +323,11 @@ function ProjectPanel({ project, index }: { project: Project; index: number }) {
           </div>
 
           <div
-            className="relative h-full min-h-[460px] rounded-[32px] border border-white/10 bg-white/[0.045] p-3 shadow-[0_45px_120px_rgba(0,0,0,0.46)]"
+            className="relative h-full min-h-[360px] rounded-[28px] border border-white/10 bg-white/[0.045] p-2 shadow-[0_45px_120px_rgba(0,0,0,0.46)] lg:min-h-[420px] lg:p-3 xl:min-h-[460px] xl:rounded-[32px]"
             style={{ boxShadow: `0 45px 120px rgba(0,0,0,0.46), 0 0 90px ${project.accentGlow}` }}
           >
-            <div className="absolute -inset-px rounded-[32px] opacity-70 pointer-events-none" style={{ background: `linear-gradient(135deg, ${project.accent}55, transparent 36%, rgba(255,255,255,0.12))` }} />
-            <div className="relative h-full overflow-hidden rounded-[24px] border border-white/10 bg-[#08090d]">
+            <div className="pointer-events-none absolute -inset-px rounded-[28px] opacity-70 xl:rounded-[32px]" style={{ background: `linear-gradient(135deg, ${project.accent}55, transparent 36%, rgba(255,255,255,0.12))` }} />
+            <div className="relative h-full overflow-hidden rounded-[22px] border border-white/10 bg-[#08090d] xl:rounded-[24px]">
               <iframe
                 title={`${project.name} live demo`}
                 src={project.demoUrl}
@@ -354,7 +354,7 @@ function MobileProject({ project, index }: { project: Project; index: number }) 
       transition={{ duration: 0.5, delay: index * 0.05 }}
     >
       <div
-        className="h-56 border-b border-white/10"
+        className="aspect-[16/10] max-h-[280px] border-b border-white/10"
         style={{
           background: `radial-gradient(circle at 70% 30%, ${project.accentGlow}, transparent 38%), #0b0c10`,
         }}
@@ -368,12 +368,12 @@ function MobileProject({ project, index }: { project: Project; index: number }) 
           referrerPolicy="no-referrer"
         />
       </div>
-      <div className="p-6">
-        <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500">
+      <div className="p-5 sm:p-6">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-widest text-gray-500 sm:text-xs">
           <span>{String(index + 1).padStart(2, '0')}</span>
           <span>{project.subtitle}</span>
         </div>
-        <h3 className="mt-4 text-3xl font-bold text-white">{project.name}</h3>
+        <h3 className="mt-4 text-3xl font-bold leading-tight text-white">{project.name}</h3>
         <p className="mt-3 text-sm leading-7 text-gray-400">{project.description}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {project.stack.map((item) => (
@@ -389,7 +389,7 @@ function MobileProject({ project, index }: { project: Project; index: number }) 
             </span>
           ))}
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">
           <ActionButton href={project.githubUrl}>
             <GithubIcon size={15} /> GitHub
           </ActionButton>
@@ -411,11 +411,11 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="lg:hidden px-4 py-20">
+      <div className="section-shell lg:hidden">
         <p className="text-xs uppercase tracking-widest text-purple-400 mb-2">
           Projects
         </p>
-        <h2 className="text-4xl font-bold text-white mb-10">
+        <h2 className="section-heading mb-10">
           Things I've built
         </h2>
         <div className="flex flex-col gap-6">

@@ -77,7 +77,7 @@ function CinematicCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewport}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative overflow-hidden rounded-[30px] border border-white/10"
+      className="group relative h-full overflow-hidden rounded-[24px] border border-white/10 sm:rounded-[30px]"
       style={{
         background: `
           radial-gradient(circle at top right, ${item.glow}, transparent 42%),
@@ -92,7 +92,7 @@ function CinematicCard({
         }}
       />
 
-      <div className="relative p-8 min-h-[280px] flex flex-col">
+      <div className="relative flex min-h-[250px] flex-col p-6 sm:min-h-[280px] sm:p-8">
         <div
           className="w-14 h-14 rounded-2xl flex items-center justify-center border border-white/10"
           style={{
@@ -103,8 +103,8 @@ function CinematicCard({
           <item.Icon size={28} color={item.accent} />
         </div>
 
-        <div className="mt-8">
-          <h3 className="text-white text-2xl font-bold tracking-tight">
+        <div className="mt-7 sm:mt-8">
+          <h3 className="text-2xl font-bold tracking-tight text-white">
             {item.title}
           </h3>
 
@@ -134,7 +134,7 @@ function MinimalCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewport}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03]"
+      className="group relative h-full overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] sm:rounded-[28px]"
     >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
@@ -143,7 +143,7 @@ function MinimalCard({
         }}
       />
 
-      <div className="relative p-7">
+      <div className="relative h-full p-6 sm:p-7">
         <div
           className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10"
           style={{
@@ -153,7 +153,7 @@ function MinimalCard({
           <item.Icon size={24} color={item.accent} />
         </div>
 
-        <h3 className="mt-5 text-white text-xl font-semibold">
+        <h3 className="mt-5 text-xl font-semibold text-white">
           {item.title}
         </h3>
 
@@ -171,20 +171,17 @@ function MinimalCard({
 
 export default function Interests() {
   return (
-    <section
-      id="interests"
-      className="relative px-6 py-[120px] overflow-hidden"
-    >
+    <section id="interests" className="section-shell relative overflow-hidden">
       {/* ambient background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 blur-[140px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute left-0 top-0 h-[240px] w-[240px] bg-purple-500/10 blur-[90px] sm:left-1/4 sm:h-[500px] sm:w-[500px] sm:blur-[140px]" />
+        <div className="absolute bottom-0 right-1/4 h-[240px] w-[240px] bg-cyan-500/10 blur-[90px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="content-shell relative">
         <SectionLabel>Interests</SectionLabel>
 
-        <RevealHeading className="text-3xl sm:text-[42px] font-bold text-white max-w-3xl leading-tight">
+        <RevealHeading className="section-heading max-w-3xl">
           Things I naturally gravitate towards
         </RevealHeading>
 
@@ -194,7 +191,7 @@ export default function Interests() {
         </p>
 
         {/* TOP CARDS */}
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:mt-14 xl:grid-cols-3">
           {cinematic.map((item, index) => (
             <CinematicCard
               key={item.title}
@@ -205,7 +202,7 @@ export default function Interests() {
         </div>
 
         {/* BOTTOM CARDS */}
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {plain.map((item, index) => (
             <MinimalCard
               key={item.title}

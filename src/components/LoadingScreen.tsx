@@ -23,11 +23,11 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9990] bg-[#0a0a0a] flex flex-col items-center justify-center transition-opacity duration-400 ${
+      className={`fixed inset-0 z-[9990] flex flex-col items-center justify-center bg-[#121317] px-6 text-center transition-opacity duration-400 ${
         fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      <div className="text-white font-bold text-5xl tracking-tight">Loading My Universe.....</div>
+      <div className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Loading My Universe.....</div>
       <div className="mt-6 w-40 h-[2px] bg-white/5 overflow-hidden rounded-full">
         <div
           className="h-full bg-purple"

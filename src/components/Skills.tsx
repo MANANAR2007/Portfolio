@@ -61,24 +61,24 @@ const categories: Category[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative px-6 py-[100px]">
+    <section id="skills" className="section-shell relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={viewport}
         transition={{ duration: 0.8 }}
-        className="absolute top-6 right-2 sm:right-6 pointer-events-none z-0"
+        className="pointer-events-none absolute right-0 top-6 z-0 hidden opacity-60 sm:block lg:right-6"
       >
-        <TorusKnotScene size={200} />
+        <TorusKnotScene size={180} />
       </motion.div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="content-shell relative z-10 max-w-5xl">
         <SectionLabel>Skills</SectionLabel>
-        <RevealHeading className="text-3xl sm:text-[38px] font-bold text-white">
+        <RevealHeading className="section-heading">
           Tech I work with
         </RevealHeading>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}
@@ -86,13 +86,13 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="card-hover bg-[#111] rounded-2xl p-5"
+              className="card-hover rounded-2xl bg-[#111] p-5"
               style={{
                 border: '1px solid rgba(255,255,255,0.08)',
                 borderLeft: `3px solid ${cat.accent}`,
               }}
             >
-              <div className="flex items-center gap-2 mb-3">
+              <div className="mb-3 flex items-center gap-2">
                 <cat.Icon size={16} color={cat.accent} />
                 <h3
                   className="text-sm font-medium"
@@ -105,7 +105,7 @@ export default function Skills() {
                 {cat.items.map((item) => (
                   <span
                     key={item}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a1a] px-3 py-1 text-[12px] text-gray-200"
+                    className="inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[#1a1a1a] px-3 py-1 text-[12px] text-gray-200"
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full"

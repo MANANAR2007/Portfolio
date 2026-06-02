@@ -78,7 +78,7 @@ export default function Hero() {
     <motion.section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen w-full flex items-center px-6 pt-24 pb-20"
+      className="relative flex min-h-[100svh] w-full items-center overflow-hidden px-5 pb-16 pt-24 sm:px-6 sm:pb-20 md:px-8 lg:px-10 lg:pt-28"
       style={{ backgroundColor: heroBg }}
     >
       <div
@@ -90,8 +90,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
-        <div className="flex flex-col gap-6">
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 md:gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+        <div className="flex max-w-2xl flex-col gap-5 sm:gap-6">
           <motion.span
             custom={0}
             initial="hidden"
@@ -107,7 +107,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="text-[38px] sm:text-5xl lg:text-[56px] leading-[1.15] font-bold text-white"
+            className="text-4xl font-bold leading-[1.12] text-white sm:text-5xl lg:text-[56px]"
           >
             Heyy, I'm Manan<span className="text-purple">.</span>
           </motion.h1>
@@ -117,7 +117,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="text-gray-400 text-[17px] leading-relaxed max-w-md min-h-[5.5rem]"
+            className="min-h-[7.5rem] max-w-xl text-base leading-7 text-gray-400 sm:min-h-[6rem] sm:text-[17px] sm:leading-relaxed"
           >
             {typed}
             {typed.length < subtitle.length && (
@@ -133,24 +133,24 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={fadeUp}
-            className="flex flex-wrap gap-3"
+            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap"
           >
             <a
               href="#projects"
-              className="btn-glow bg-purple hover:bg-purple-light transition-colors rounded-full px-6 py-3 text-sm font-medium text-white"
+              className="btn-glow inline-flex min-h-12 items-center justify-center rounded-full bg-purple px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-purple-light"
             >
               View Projects
             </a>
             <a
               href="#"
               /* TODO: replace with real resume link */
-              className="btn-glow border border-white/20 hover:border-white/50 text-white rounded-full px-6 py-3 text-sm font-medium transition-colors"
+              className="btn-glow inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/50"
             >
               Resume
             </a>
             <a
               href="#contact"
-              className="btn-glow border border-white/20 hover:border-white/50 text-white rounded-full px-6 py-3 text-sm font-medium transition-colors"
+              className="btn-glow inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/50"
             >
               Contact
             </a>
@@ -197,18 +197,16 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: 'easeOut' }}
           style={{ y: photoY }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center lg:justify-end"
         >
           <div
-            className="relative"
+            className="relative w-full max-w-[300px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[460px]"
             style={{
-              width: 280,
-              height: 380,
               boxShadow: '0 0 80px rgba(124,58,237,0.2)',
               borderRadius: 24,
             }}
           >
-            <div className="relative w-[340px] md:w-[420px] h-[460px] md:h-[560px] -translate-x-6 -translate-y-12">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl">
               <img
                 src={HERO_PHOTO}
                 alt=""
@@ -219,7 +217,6 @@ export default function Hero() {
                   borderRadius: 24,
                   filter: 'blur(40px)',
                   opacity: 0.25,
-                  transform: 'scale(1.25)',
                   zIndex: -1,
                 }}
               />
@@ -238,19 +235,19 @@ export default function Hero() {
             </div>
 
             <div
-              className="absolute"
-              style={{ top: -144, right: -214 }}
+              className="absolute hidden md:block"
+              style={{ top: -84, right: 0 }}
               aria-hidden
             >
-              <TorusRingScene size={200} />
+              <TorusRingScene size={180} />
             </div>
 
             <div
-              className="absolute"
-              style={{ bottom: -200, left: -88 }}
+              className="absolute hidden md:block"
+              style={{ bottom: -92, left: 0 }}
               aria-hidden
             >
-              <IcoGemScene size={150} />
+              <IcoGemScene size={130} />
             </div>
           </div>
         </motion.div>

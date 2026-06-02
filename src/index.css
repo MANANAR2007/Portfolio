@@ -10,7 +10,7 @@ html {
 
 html,
 body {
-  background-color: #0a0a0a;
+  background-color: #121317;
   color: #f9fafb;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,33 @@ body {
 #root {
   min-height: 100vh;
   width: 100%;
+  overflow-x: clip;
+}
+
+img,
+iframe,
+canvas,
+svg,
+video {
+  max-width: 100%;
+}
+
+@layer components {
+  .section-shell {
+    @apply px-5 py-20 sm:px-6 sm:py-24 md:px-8 lg:px-10 lg:py-28;
+  }
+
+  .content-shell {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  .section-heading {
+    @apply text-3xl font-bold leading-tight text-white sm:text-[38px] lg:text-[42px];
+  }
+
+  .touch-target {
+    @apply min-h-11 min-w-11;
+  }
 }
 
 ::selection {
@@ -120,12 +147,6 @@ select:focus-visible,
   }
 }
 
-@keyframes tickerScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
-}
-
-
 /* ---------- custom cursor ---------- */
 @media (pointer: fine) {
   html.cursor-active,
@@ -196,4 +217,15 @@ body.cursor-hover .cursor-ring {
 }
 .btn-glow:hover {
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }

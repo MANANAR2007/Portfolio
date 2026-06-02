@@ -8,19 +8,19 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative px-6 py-32"
+      className="section-shell relative overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <SphereScene size={520} />
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-45 sm:opacity-70">
+        <SphereScene size={420} />
       </div>
 
-      <div className="max-w-3xl mx-auto text-center relative z-10">
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl font-bold text-white leading-tight"
+          className="text-4xl font-bold leading-tight text-white sm:text-5xl"
         >
           Let's build{' '}
           <span
@@ -44,7 +44,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-6 text-gray-400 text-base max-w-lg mx-auto leading-relaxed"
+          className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-gray-400"
         >
           I'm open to collaborations, projects, or just a good conversation
           about tech and ideas.
@@ -55,12 +55,12 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
         >
           {/* TODO: add real email */}
           <a
             href="mailto:mananar2007@gmail.com"
-            className="btn-glow inline-flex items-center gap-2 bg-purple hover:bg-purple-light transition-colors text-white rounded-full px-8 py-4 text-sm font-medium"
+            className="btn-glow inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-purple px-8 py-4 text-sm font-medium text-white transition-colors hover:bg-purple-light"
           >
             <Mail size={16} /> Email Me
           </a>
@@ -69,7 +69,7 @@ export default function Contact() {
             href="https://github.com/MANANAR2007"
             target="_blank"
             rel="noreferrer"
-            className="btn-glow inline-flex items-center gap-2 border border-white/20 hover:border-white/50 text-white rounded-full px-8 py-4 text-sm font-medium transition-colors"
+            className="btn-glow inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 text-sm font-medium text-white transition-colors hover:border-white/50"
           >
             GitHub <ExternalLink size={14} />
           </a>
@@ -78,13 +78,13 @@ export default function Contact() {
             href="https://www.linkedin.com/in/manan-raythatha-2383b1233"
             target="_blank"
             rel="noreferrer"
-            className="btn-glow inline-flex items-center gap-2 border border-white/20 hover:border-white/50 text-white rounded-full px-8 py-4 text-sm font-medium transition-colors"
+            className="btn-glow inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 text-sm font-medium text-white transition-colors hover:border-white/50"
           >
             LinkedIn <ExternalLink size={14} />
           </a>
         </motion.div>
 
-        <p className="mt-16 text-gray-500 text-[13px]">
+        <p className="mt-14 text-[13px] text-gray-500 sm:mt-16">
           Built by Manan Raythatha · 2025
         </p>
       </div>
